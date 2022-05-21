@@ -1,0 +1,23 @@
+nav {
+  background: rgba(231, 224, 224, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(241, 241, 243, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  color: white;
+  z-index: 2222;
+}
+.dropdown-menu {
+  background: rgba(231, 224, 224, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(241, 241, 243, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.dropdown-menu:hover li:hover {
+  background-color: rgb(10, 7, 12) !important;
+}

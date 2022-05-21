@@ -1,0 +1,82 @@
+#home-father {
+  position: relative;
+  min-height: 100vh;
+}
+.Home {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+#particles-js {
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  top: 0;
+  height: 100%;
+  z-index: -1;
+}
+.note-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #cfc;
+  border-radius: 10px;
+  color: black;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  min-height: 200px;
+  min-width: 200px;
+  word-break: break-all;
+}
+li a {
+  color: black !important;
+  text-align: center;
+}
+/* addNote */
+
+.AddNote {
+  background-image: linear-gradient(
+    to right,
+    #4152b6 0%,
+    #26d0ce 51%,
+    #586cdd 100%
+  );
+}
+.AddNote {
+  margin: 10px;
+  padding: 10px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+}
+
+.AddNote:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+/* edit */
+
+/* trash */
+
+.dropdown-menu {
+  background: rgba(74, 144, 226, 0.65);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}

@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Oswald", sans-serif;
+}
+body {
+  background-color: #bd4f6c;
+  background-image: linear-gradient(90deg, #bd4f6c 0%, #d7816a 74%);
+}
+a,
+h1 {
+  color: white !important;
+}

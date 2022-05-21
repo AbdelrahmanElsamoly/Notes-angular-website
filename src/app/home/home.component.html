@@ -1,0 +1,244 @@
+<section id="home-father" class="w-100">
+  <div id="particles-js" style="color: white"></div>
+  <div class="container position-absolute mx-auto Home">
+    <div class="row gap-5">
+      <div
+        class="col-md-12 w-100 my-5 d-flex justify-content-end align-items-end"
+      >
+        <button
+          type="button"
+          class="btn AddNote"
+          data-bs-toggle="modal"
+          data-bs-target="#Addnote"
+        >
+          AddNote
+        </button>
+      </div>
+      <div *ngFor="let note of userNotes" class="col-md-2 note-container">
+        <div class="w-100">
+          <div class="dropdown w-25 ms-auto">
+            <button
+              class="btn border-0"
+              type="button"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li>
+                <a
+                  class="dropdown-item w-100"
+                  data-bs-toggle="modal"
+                  data-bs-target="#EditNote"
+                >
+                  <button
+                    class="btn"
+                    (click)="getselectNot(note); noteID(note._id)"
+                  >
+                    Edit
+                    <i class="fa fa-edit mx-auto w-25" aria-hidden="true"></i>
+                  </button>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  data-bs-toggle="modal"
+                  data-bs-target="#DeleteNote"
+                >
+                  <button class="btn" (click)="noteID(note._id)">
+                    delete <i class="fa fa-trash" aria-hidden="true"></i>
+                  </button>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="Text text-center">
+          <h2>{{ note.title }}</h2>
+          <p>
+            {{ note.desc }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- model -->
+
+<!-- Modal add note -->
+<div
+  class="modal fade my-5"
+  id="Addnote"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <form [formGroup]="addNote" (ngSubmit)="addNotes()">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Title</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <input
+            type="text"
+            placeholder="Title"
+            class="form-control"
+            formControlName="title"
+          />
+          <div
+            class="alert alert-danger py-0"
+            *ngIf="
+              addNote.get('title')?.errors?.required &&
+              addNote.get('title')?.touched
+            "
+          >
+            <p>the title is required</p>
+          </div>
+          <textarea
+            class="form-control mt-2"
+            placeholder="Type Your Note"
+            id="exampleFormControlTextarea1"
+            formControlName="Note"
+            rows="3"
+          ></textarea>
+          <div
+            class="alert alert-danger py-0"
+            *ngIf="
+              addNote.get('Note')?.errors?.required &&
+              addNote.get('Note')?.touched
+            "
+          >
+            <p>the note is required</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="submit"
+            [disabled]="addNote.invalid"
+            class="btn btn-primary"
+          >
+            Edit
+          </button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- edit Note -->
+<div
+  class="modal fade my-5"
+  id="EditNote"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <form [formGroup]="SelNote" (ngSubmit)="UpDated()">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Title</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <input
+            type="text"
+            placeholder="Title"
+            class="form-control"
+            formControlName="title"
+          />
+          <div
+            class="alert alert-danger py-0"
+            *ngIf="
+              SelNote.get('title')?.errors?.required &&
+              SelNote.get('title')?.touched
+            "
+          >
+            <p>the title is required</p>
+          </div>
+          <textarea
+            class="form-control mt-2"
+            placeholder="Type Your Note"
+            id="exampleFormControlTextarea1"
+            formControlName="Note"
+            rows="3"
+          ></textarea>
+          <div
+            class="alert alert-danger py-0"
+            *ngIf="
+              SelNote.get('Note')?.errors?.required &&
+              SelNote.get('Note')?.touched
+            "
+          >
+            <p>the note is required</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="submit"
+            [disabled]="SelNote.invalid"
+            class="btn btn-primary"
+          >
+            Save Changes
+          </button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Delete Note -->
+<div
+  class="modal fade my-5"
+  id="DeleteNote"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Title</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="w-100">Are you sure You want to delete this Note?</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+          Cancel
+        </button>
+        <button type="button" class="btn btn-danger" (click)="DeleteNoteSele()">
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
