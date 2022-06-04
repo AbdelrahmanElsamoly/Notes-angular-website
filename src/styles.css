@@ -7,10 +7,10 @@
   font-family: "Oswald", sans-serif;
 }
 body {
-  background-color: #bd4f6c;
-  background-image: linear-gradient(90deg, #bd4f6c 0%, #d7816a 74%);
+  background-color: #6a93cb;
+  background-image: linear-gradient(90deg, #a4bfef 20%, #fff 50%);
 }
 a,
 h1 {
-  color: white !important;
+  color: black !important;
 }

@@ -1,15 +1,17 @@
 nav {
-  background: rgba(231, 224, 224, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(241, 241, 243, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #fff;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 0 0 30% 30%;
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
-  color: white;
+  color: black;
   z-index: 2222;
+  -webkit-border-radius: 0 0 30% 30%;
+  -moz-border-radius: 0 0 30% 30%;
+  -ms-border-radius: 0 0 30% 30%;
+  -o-border-radius: 0 0 30% 30%;
 }
 .dropdown-menu {
   background: rgba(231, 224, 224, 0.25);

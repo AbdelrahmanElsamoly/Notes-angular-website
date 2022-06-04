@@ -2,8 +2,7 @@
   position: relative;
   min-height: 100vh;
 }
-.Home {
-  position: absolute;
+/* .Home {
   top: 5%;
   left: 50%;
   transform: translateX(-50%);
@@ -11,21 +10,34 @@
   -moz-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
-}
-#particles-js {
+} */
+.tittle-father {
+  box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.028),
+    6.7px 6.7px 5.3px rgba(0, 0, 0, 0.04),
+    12.5px 12.5px 10px rgba(0, 0, 0, 0.05),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.06),
+    41.8px 41.8px 33.4px rgba(0, 0, 0, 0.072),
+    100px 100px 80px rgba(0, 0, 0, 0.1);
+
   position: absolute;
-  left: 50%;
-  width: 100%;
-  transform: translateX(-50%);
-  top: 0;
-  height: 100%;
+  background: #fff;
+  top: -27%;
+  left: 0%;
   z-index: -1;
+  padding: 15px 0 20px 0;
+  border-radius: 10px 10px 0px 0px;
+  -webkit-border-radius: 10px 10px 0px 0px;
+  -moz-border-radius: 10px 10px 0px 0px;
+  -ms-border-radius: 10px 10px 0px 0px;
+  -o-border-radius: 10px 10px 0px 0px;
 }
+
 .note-container {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  background-color: #cfc;
+  background-color: #fe7bb0;
+  background-image: linear-gradient(315deg, #fe7bb0 0%, #ff748b 74%);
   border-radius: 10px;
   color: black;
   -webkit-border-radius: 10px;
@@ -45,9 +57,9 @@ li a {
 .AddNote {
   background-image: linear-gradient(
     to right,
-    #4152b6 0%,
+    #89d8d3 0%,
     #26d0ce 51%,
-    #586cdd 100%
+    #03c8a8 100%
   );
 }
 .AddNote {

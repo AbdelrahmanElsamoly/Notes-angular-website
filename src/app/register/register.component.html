@@ -1,5 +1,5 @@
 <div class="container w-100 my-5">
-  <div class="container w-100 py-5">
+  <div class="container w-100">
     <h1 style="font-weight: bolder" class="py-5">Register Now</h1>
     <div class="alert alert-danger" *ngIf="errors">{{ errors }}</div>
     <form [formGroup]="registerForm" (ngSubmit)="registeration(registerForm)">
@@ -147,4 +147,8 @@
       </button>
     </form>
   </div>
+</div>
+<div class="ocean">
+  <div class="wave"></div>
+  <div class="wave"></div>
 </div>

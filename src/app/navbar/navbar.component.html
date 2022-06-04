@@ -17,49 +17,26 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item dropdown" *ngIf="!isLogin">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdownMenuLink"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Sign
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li class="nav-item">
-              <a class="nav-link" routerLink="login">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="register">Register</a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown" *ngIf="isLogin">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdownMenuLink"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            User
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li class="nav-item">
-              <a class="nav-link" routerLink="home"
-                ><i class="fa fa-user" aria-hidden="true"></i>
-                {{ this.userName.first_name }}
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" (click)="logout()" href="#">Logout</a>
-            </li>
-          </ul>
-        </li>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="!isLogin">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="register">Register</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="isLogin">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="home"
+              ><i class="fa fa-user" aria-hidden="true"></i>
+              {{ this.userName.first_name }}
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()" href="#">Logout</a>
+          </li>
+        </ul>
       </ul>
     </div>
   </div>

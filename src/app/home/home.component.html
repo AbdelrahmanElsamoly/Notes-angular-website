@@ -1,6 +1,5 @@
 <section id="home-father" class="w-100">
-  <div id="particles-js" style="color: white"></div>
-  <div class="container position-absolute mx-auto Home">
+  <div class="container mx-auto Home my-3">
     <div class="row gap-5">
       <div
         class="col-md-12 w-100 my-5 d-flex justify-content-end align-items-end"
@@ -14,7 +13,10 @@
           AddNote
         </button>
       </div>
-      <div *ngFor="let note of userNotes" class="col-md-2 note-container">
+      <div
+        *ngFor="let note of userNotes"
+        class="col-md-2 position-relative py-1 my-2 note-container"
+      >
         <div class="w-100">
           <div class="dropdown w-25 ms-auto">
             <button
@@ -57,10 +59,14 @@
           </div>
         </div>
         <div class="Text text-center">
-          <h2>{{ note.title }}</h2>
-          <p>
-            {{ note.desc }}
-          </p>
+          <div class="tittle-father w-100">
+            <h2>{{ note.title }}</h2>
+          </div>
+          <div>
+            <p>
+              {{ note.desc }}
+            </p>
+          </div>
         </div>
       </div>
     </div>
